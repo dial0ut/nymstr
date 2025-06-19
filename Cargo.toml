@@ -28,7 +28,14 @@ log = "0.4"
 env_logger = "0.9"
 dotenvy = "0.15"
  fastrand = "1.9"
+
 sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio", "chrono"] }
+
+# MLS group management via OpenMLS (Messaging Layer Security) library
+openmls = { git = "https://github.com/openmls/openmls", branch = "main", package = "openmls" }
+openmls_rust_crypto = { git = "https://github.com/openmls/openmls", branch = "main", package = "openmls_rust_crypto" }
+openmls_basic_credential = { git = "https://github.com/openmls/openmls", branch = "main", package = "openmls_basic_credential" }
+openmls_traits = { git = "https://github.com/openmls/openmls", branch = "main", package = "openmls_traits" }
 # removed tachyonfx
 #[removed] rand_core = "0.6"
 #[removed] ring = "0.16"

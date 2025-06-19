@@ -48,6 +48,7 @@ src/
     mixnet_client.rs         # Wraps nym-sdk client, receives & sends mixnet envelopes
     message_handler.rs       # High-level registration/login, secure messaging flows
     messages.rs              # JSON envelope definitions (MixnetMessage)
+    mls.rs                   # MLS group management via the openmls crate
   event/                     # Keyboard and UI event handlers
   model/                     # Data models (Contact, Message, User)
   screen/                    # TUI chat screen state & widgets
@@ -77,6 +78,9 @@ tests/
   - Per-user `contacts_{username}` and `messages_{username}` tables
 - Methods: register, add/get/delete contacts, save/load/delete messages, and
   convenience methods (`get_all_users`, `get_all_messages`).
+
+### `src/core/mls.rs`
+- Provides MLS group setup and management (CredentialBundles, proposals, commits, welcomes, and application data encryption/decryption) via the `openmls` crate.
 
 ### `src/core/mixnet_client.rs`
 - Manages a `MixnetService` that wraps the nym-sdk MixnetClient.

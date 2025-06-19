@@ -1,4 +1,9 @@
 //! High-level handler for user registration, login, messaging, and queries
+// TODO: Integrate MLS group management via MlsClient in place of raw Crypto calls:
+//   - Initialize MlsClient after user login/registration with identity & ciphersuite
+//   - Use MlsClient.propose_member() and commit() for group membership proposals
+//   - Encrypt and decrypt application payloads with MlsClient.encrypt_app_data()/decrypt_app_data()
+//   - Route incoming MLS messages to MlsClient.process_message()
 #![allow(dead_code)]
 use crate::core::crypto::{Crypto, Encrypted};
 use crate::core::db::Db;
